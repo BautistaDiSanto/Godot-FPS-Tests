@@ -2,8 +2,6 @@
 I'll use this repository to create &amp; test new functionalities in godot.
 
 What i have learned:
-
-I was able to do:
 * Create camera & character movement.
 * Create & import 3d assets from Blender.
 
