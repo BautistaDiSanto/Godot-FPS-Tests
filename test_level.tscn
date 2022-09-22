@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/stoneFloor01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/stoneWall01.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://assets/barrel01.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -14,17 +15,40 @@ mid_height = 1.5
 
 [node name="test_level" type="Spatial"]
 
-[node name="stoneWall01" parent="." instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0827103, 0, 20.111 )
+[node name="Level assets" type="Spatial" parent="."]
 
-[node name="stoneWall02" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.1686 )
+[node name="barrel" parent="Level assets" instance=ExtResource( 4 )]
+transform = Transform( 0.138983, 0, -0.990295, 0, 1, 0, 0.990295, 0, 0.138983, -18.7729, 1.08497, 18.7428 )
 
-[node name="stoneWall03" parent="." instance=ExtResource( 2 )]
+[node name="barrel2" parent="Level assets" instance=ExtResource( 4 )]
+transform = Transform( -0.818621, 0, -0.574334, 0, 1, 0, 0.574334, 0, -0.818621, 0.823851, 1.08497, 18.2223 )
+
+[node name="stoneWall01" parent="Level assets" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0827103, 0, 19.6902 )
+
+[node name="stoneWall02" parent="Level assets" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.0091 )
+
+[node name="stoneWall03" parent="Level assets" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, -0.0356846 )
 
-[node name="stoneFloor01" parent="." instance=ExtResource( 1 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
+[node name="stoneFloor01" parent="Level assets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10 )
+
+[node name="stoneFloor02" parent="Level assets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10 )
+
+[node name="stoneFloor03" parent="Level assets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10 )
+
+[node name="stoneFloor04" parent="Level assets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10 )
+
+[node name="stoneFloor05" parent="Level assets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -10 )
+
+[node name="stoneFloor06" parent="Level assets" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10 )
 
 [node name="Player" type="KinematicBody" parent="."]
 script = ExtResource( 3 )
