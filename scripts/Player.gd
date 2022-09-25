@@ -22,9 +22,6 @@ var fall = Vector3()
 
 onready var head = $Head
 
-func dash_timer():
-	print("dash_timer")
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	dash_timer = Timer.new()

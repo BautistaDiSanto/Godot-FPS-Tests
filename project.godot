@@ -8,11 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area",
+"class": "Door",
+"language": "GDScript",
+"path": "res://scripts/door01.gd"
+} ]
+_global_script_class_icons={
+"Door": ""
+}
+
 [application]
 
-config/name="Armagedon"
+config/name="FPS test"
 run/main_scene="res://test_level.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
+window/stretch/mode="viewport"
 
 [gui]
 
@@ -52,6 +69,11 @@ asdasd={
 enable_dash={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777237,"unicode":0,"echo":false,"script":null)
+ ]
+}
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
