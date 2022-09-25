@@ -7,9 +7,9 @@ What i have learned:
 * Display 3d assests with colittion on level.
 * Create rudimentary doble jump & dash.
 * Add level decoration assets.
+* Raycast to interact with level items.
 
 What i want to learn:
-* Combat system.
-* Interactive level elements.
-* Enemy AI.
 * User interface.
+* Combat system.
+* Enemy AI.
