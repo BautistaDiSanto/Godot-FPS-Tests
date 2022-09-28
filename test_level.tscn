@@ -1,20 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/stoneFloor01.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/stoneWall01.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/Player.gd" type="Script" id=3]
-[ext_resource path="res://assets/barrel01.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/box01.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/door01.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/InteractRay.gd" type="Script" id=7]
-
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.5
-height = 1.5
-
-[sub_resource type="CapsuleMesh" id=2]
-radius = 0.5
-mid_height = 1.5
+[ext_resource path="res://scenes/stoneFloor01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/stoneWall01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/barrel01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/box01.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/door01.tscn" type="PackedScene" id=6]
 
 [node name="test_level" type="Spatial"]
 
@@ -74,28 +65,9 @@ transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 6.46156, 0,
 [node name="box02" parent="Level assets" instance=ExtResource( 5 )]
 transform = Transform( 0.999407, 0, 0.034446, 0, 1, 0, -0.034446, 0, 0.999407, 9, 0, 18 )
 
-[node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 0 )
-script = ExtResource( 3 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Player"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0 )
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Player"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0 )
-mesh = SubResource( 2 )
-
-[node name="Head" type="Camera" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
-
-[node name="InteractRay" type="RayCast" parent="Player/Head"]
-enabled = true
-cast_to = Vector3( 0, 0, -3 )
-collide_with_areas = true
-collide_with_bodies = false
-script = ExtResource( 7 )
-
-[node name="door01" parent="." instance=ExtResource( 6 )]
+[node name="door01" parent="Level assets" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.7164, 0, -0.906874 )
 close_angle = Vector3( 0, -90, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+base_speed = 13
