@@ -10,6 +10,8 @@ What i have learned:
 * Raycast to interact with level items.
 
 What i want to learn:
-* User interface.
 * Combat system.
 * Enemy AI.
+
+Currently working on:
+* User interface.
