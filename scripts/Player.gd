@@ -11,7 +11,7 @@ var jumped = 0
 
 var dash_speed = 3
 var dash_duration = 0.3
-var dash_cooldown = 1
+var dash_cooldown = 0.7
 var can_dash = true
 
 var mouse_sensivility = 0.05
@@ -32,9 +32,9 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-90), deg2rad(90))
 
 func _process(delta):
-	
+
 	direction = Vector3()
-	
+
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

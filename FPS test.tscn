@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/00-test-level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 1, 0.494118, 0.321569, 1 )
+background_energy = 0.2
+ambient_light_color = Color( 0.988235, 0.768627, 0.768627, 1 )
+ambient_light_energy = 0.2
+auto_exposure_enabled = true
+auto_exposure_scale = 0.5
+auto_exposure_min_luma = 11.2
+auto_exposure_max_luma = 0.0
+ss_reflections_enabled = true
+ssao_enabled = true
+
+[node name="Main" type="WorldEnvironment"]
+environment = SubResource( 1 )
+
+[node name="test_level" parent="." instance=ExtResource( 1 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.416722, 0 )
