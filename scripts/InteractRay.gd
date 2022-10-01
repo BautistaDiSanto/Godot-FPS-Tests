@@ -1,9 +1,10 @@
 extends RayCast
 
-onready var crossair = $CanvasLayer/InGameUI/Crossair
-
 func _input(event):
 	var collided = get_collider()
-	if collided is Door:
-		collided._on_mouse_entered()
+	if collided and collided.is_in_group("Interact"):
+		print('interactable')
+		if Input.is_action_just_pressed("interact"):
+			collided._on_mouse_entered()
+
 	return event

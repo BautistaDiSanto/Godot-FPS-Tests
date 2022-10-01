@@ -8,10 +8,13 @@ export var close_angle = Vector3(0,0,0)
 export var open_angle = Vector3(0,0,0)
 onready var tween = $Tween
 
+signal crossair_state(active)
+
 var in_animation = false
 
 func _on_mouse_entered():
-	if Input.is_action_just_pressed("interact") and !in_animation:
+	emit_signal("crossair_state", true)
+	if not in_animation:
 		if !open:
 			in_animation = true
 			tween.interpolate_property(self, "rotation_degrees", close_angle, open_angle, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)

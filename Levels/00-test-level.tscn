@@ -171,15 +171,10 @@ close_angle = Vector3( 0, -90, 0 )
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 99.9478, 0.124546, -37.9996 )
 close_angle = Vector3( 0, -90, 0 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.733979, 1.09371e-08, -0.679172, 0.197732, 0.956682, 0.213688, 0.649752, -0.291136, 0.702184, -13, 26.4936, 32.2964 )
-light_color = Color( 1, 0.65098, 0.317647, 1 )
-shadow_enabled = true
-
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 0.904172, 9.83877e-05, -0.427169, 0.000281456, 1, 0.000826073, 0.427169, -0.000867141, 0.904172, -14.8853, 2.76653, 38.4956 )
-light_color = Color( 1, 0.682353, 0.188235, 1 )
+light_color = Color( 1, 0.576471, 0.203922, 1 )
 shadow_enabled = true
-shadow_bias = 0.42
-spot_range = 30.201
-spot_angle = 2.71
+shadow_bias = 10.0
+spot_range = 130.204
+spot_angle = 66.89
