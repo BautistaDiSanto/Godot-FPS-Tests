@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/InteractRay.gd" type="Script" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://assets 2d/Crossair Inactive.png" type="Texture" id=3]
+[ext_resource path="res://scenes/InGameUI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -35,13 +35,4 @@ collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource( 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Head/InteractRay"]
-
-[node name="Crossair" type="CenterContainer" parent="Head/InteractRay/CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="CrossairInactive" type="Sprite" parent="Head/InteractRay/CanvasLayer/Crossair"]
-position = Vector2( 512, 300 )
-scale = Vector2( 1.26923, 1.26923 )
-texture = ExtResource( 3 )
+[node name="InGameUI" parent="Head/InteractRay" instance=ExtResource( 3 )]

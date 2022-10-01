@@ -59,7 +59,7 @@ func _process(delta):
 		jumped = jumped + 1
 		fall.y = jump
 
-	if (Input.is_action_just_pressed("enable_dash") && can_dash):
+	if (Input.is_action_just_pressed("dash") && can_dash):
 		current_speed *= dash_speed
 		can_dash = false
 

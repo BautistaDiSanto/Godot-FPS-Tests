@@ -24,7 +24,7 @@ data = PoolVector3Array( -1, -1, 0.2263, -1, 1, -0.2263, -1, 1, 0.2263, -1, -1, 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.632576, 1.92627, 0.134782 )
 
-[node name="door01" type="Area" groups=["Interact"]]
+[node name="door01" type="Area" groups=["Door", "Interactable"]]
 script = ExtResource( 2 )
 
 [node name="Cube001" type="MeshInstance" parent="."]

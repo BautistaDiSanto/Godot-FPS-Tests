@@ -1,19 +1,14 @@
 extends Area
 
-class_name Door
-
 var open = false
 
 export var close_angle = Vector3(0,0,0)
 export var open_angle = Vector3(0,0,0)
 onready var tween = $Tween
 
-signal crossair_state(active)
-
 var in_animation = false
 
 func _on_mouse_entered():
-	emit_signal("crossair_state", true)
 	if not in_animation:
 		if !open:
 			in_animation = true
