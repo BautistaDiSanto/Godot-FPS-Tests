@@ -34,6 +34,7 @@ mesh = SubResource( 1 )
 [node name="StaticBody" type="StaticBody" parent="Cube001"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube001/StaticBody"]
+transform = Transform( 1, 3.76281e-09, -9.31323e-10, 8.45001e-07, 1, -1.08033e-07, 9.31323e-10, 0, 1, -0.00449109, 0.0397134, -0.00388543 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
