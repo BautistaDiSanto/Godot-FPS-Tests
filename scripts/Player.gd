@@ -85,10 +85,10 @@ func _process(delta):
 
 
 		yield(get_tree().create_timer(dash_cooldown), "timeout")
-			
+
 		can_dash = true
 		DashIcon.value = 100
-		
+
 	#yield(get_tree(), "script_changed")
 	#if DashIcon.value < 100:
 	#	DashIcon.value +=  dash_cooldown 1
