@@ -1,6 +1,9 @@
 # Godot-FPS-Tests
 I'll use this repository to create &amp; test new functionalities in godot.
 
+Currently working on:
+* Player's health/damage system.
+
 What i have learned:
 * Create camera & character movement.
 * Create & import 3d assets from Blender.
@@ -13,6 +16,3 @@ What i have learned:
 What i want to learn:
 * Combat system.
 * Enemy AI.
-
-Currently working on:
-* Player's health/damage system.
