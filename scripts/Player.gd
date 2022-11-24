@@ -5,14 +5,13 @@ var acceleration = 20
 var gravity = 9.8
 export var base_speed = 7
 
-onready var JumpActive = $Head/InteractRay/InGameUI/JumpIndicator/JumpActive
-onready var JumpInactive = $Head/InteractRay/InGameUI/JumpIndicator/JumpInactive
+onready var Jump1 = $Head/InteractRay/InGameUI/Control/JumpIndicator/JumpIcon1
+onready var Jump2 = $Head/InteractRay/InGameUI/Control/JumpIndicator/JumpIcon2
 var jump = 5
 var available_jumps = 2
 var jumped = 0
 
-onready var DashActive = $Head/InteractRay/InGameUI/DashIndicator/DashActive
-onready var DashInactive = $Head/InteractRay/InGameUI/DashIndicator/DashInactive
+onready var DashIcon = $Head/InteractRay/InGameUI/Control/DashIcon
 var dash_speed = 3
 var dash_duration = 0.3
 var dash_cooldown = 0.7
@@ -29,10 +28,8 @@ var fall = Vector3()
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	DashActive.visible = true
-	DashInactive.visible = false
-	JumpActive.visible = true
-	JumpInactive.visible = false
+	Jump1.value = 100
+	Jump2.value = 100
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -61,35 +58,41 @@ func _process(delta):
 
 	if is_on_floor():
 		jumped = 0
-		JumpActive.visible = true
-		JumpInactive.visible = false
+		Jump1.value = 100
+		Jump2.value = 100
 	else: 
 		fall.y -= gravity * delta
 
 	if (Input.is_action_just_pressed("jump")) and (jumped < available_jumps):
 		jumped = jumped + 1
 		if jumped == 2:
-			JumpActive.visible = false
-			JumpInactive.visible = true
+			Jump1.value = 0
+			Jump2.value = 0
+		else:
+			Jump1.value = 0
+			Jump2.value = 100
 		fall.y = jump
 
 	if (Input.is_action_just_pressed("dash") && can_dash):
 		current_speed *= dash_speed
 		can_dash = false
 		
-		DashActive.visible = false
-		DashInactive.visible = true
+		DashIcon.value = 0
 
 		yield(get_tree().create_timer(dash_duration), "timeout")
 
 		current_speed = base_speed
 
-		yield(get_tree().create_timer(dash_cooldown), "timeout")
-		
-		DashActive.visible = true
-		DashInactive.visible = false
 
+		yield(get_tree().create_timer(dash_cooldown), "timeout")
+			
 		can_dash = true
+		DashIcon.value = 100
+		
+	#yield(get_tree(), "script_changed")
+	#if DashIcon.value < 100:
+	#	DashIcon.value +=  dash_cooldown 1
+	#else:
 
 	direction = direction.normalized()
 	velocity = velocity.linear_interpolate(direction * current_speed, acceleration * delta)

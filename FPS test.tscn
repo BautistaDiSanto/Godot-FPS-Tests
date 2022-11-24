@@ -1,20 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/00-test-level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 
+[sub_resource type="PanoramaSky" id=2]
+
 [sub_resource type="Environment" id=1]
-background_mode = 1
-background_color = Color( 1, 0.494118, 0.321569, 1 )
-background_energy = 0.2
-ambient_light_color = Color( 0.988235, 0.768627, 0.768627, 1 )
-ambient_light_energy = 0.2
-auto_exposure_enabled = true
-auto_exposure_scale = 0.5
-auto_exposure_min_luma = 11.2
-auto_exposure_max_luma = 0.0
-ss_reflections_enabled = true
-ssao_enabled = true
+background_mode = 6
+background_sky = SubResource( 2 )
+background_sky_custom_fov = 1.0
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.05
 
 [node name="Main" type="WorldEnvironment"]
 environment = SubResource( 1 )
