@@ -8,10 +8,11 @@ What i have learned:
 * Create rudimentary doble jump & dash.
 * Add level decoration assets.
 * Raycast to interact with level items.
+* Basic User interface.
 
 What i want to learn:
 * Combat system.
 * Enemy AI.
 
 Currently working on:
-* User interface.
+* Player's health/damage system.
