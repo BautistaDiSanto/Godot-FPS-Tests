@@ -26,10 +26,10 @@ rect_scale = Vector2( 1.2, 1.2 )
 theme = SubResource( 3 )
 
 [node name="DashIcon" type="TextureProgress" parent="Control"]
-margin_left = 50.0
-margin_top = 950.0
-margin_right = 91.0
-margin_bottom = 1080.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 136.0
+margin_top = -130.0
 value = 100.0
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
